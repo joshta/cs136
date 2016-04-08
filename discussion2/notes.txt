@@ -1,13 +1,52 @@
-reversible vs irreversible
+Dropping Privileges
+-------------------
 
-algorithm publicly known
+If your program must run setuid or setgid, make sure to use the privileges properly so that an attacker cannot exploit other possible vulnerabilities in your program and gain these additional privileges. You should perform whatever work requires the additional privileges as early in the program as possible, and you should drop the extra privileges immediately after that work is done. [1]
 
-confidentiality
+The master process is run as root, then nginx will setuid()/setgid() to USER/GROUP. [2]
 
-one time pad
+Some daemons need root permissions to start. This happens for example when a daemon wants to bind to a low port (<1024). However running network based daemons with root permissions is considered to be a serious risk. In case of compromise of the process, an attacker has full access to the system. This is why software like nginx starts with a master process and forks non-privileged child processes. These child processes (or workers), run under the context of non-privileged account like www-data. [3]
 
-quantum crypto
+[1] https://www.safaribooksonline.com/library/view/secure-programming-cookbook/0596003943/ch01s03.html
 
-insertion attack
+[2] http://serverfault.com/a/534501
 
-Nonrepudiation is the assurance that someone cannot deny something. Typically, nonrepudiation refers to the ability to ensure that a party to a contract or a communication cannot deny the authenticity of their signature on a document or the sending of a message that they originated.
+[3] http://linux-audit.com/how-and-why-linux-daemons-drop-privileges/
+
+
+
+
+Authenticated Encryption
+------------------------
+
+Encrypt-then-MAC 
+
+The plaintext is first encrypted, then a MAC is produced based on the resulting ciphertext. The ciphertext and its MAC are sent together. [1]
+
+Using public-key authenticated encryption, Bob can encrypt a confidential message specifically for Alice, using Alice's public key.
+
+Using Bob's public key, Alice can verify that the encrypted message was actually created by Bob and was not tampered with, before eventually decrypting it.
+
+Alice only needs Bob's public key, the nonce and the ciphertext. Bob should never ever share his secret key, even with Alice.
+
+And in order to send messages to Alice, Bob only needs Alice's public key. Alice should never ever share her secret key either, even with Bob. [2]
+
+[1] https://en.wikipedia.org/wiki/Authenticated_encryption#Encrypt-then-MAC_.28EtM.29
+
+[2] https://download.libsodium.org/doc/public-key_cryptography/authenticated_encryption.html
+
+
+
+
+Confusion
+---------
+One aim of confusion is to make it very hard to find the key even if one has a large number of plaintext-ciphertext pairs produced with the same key. [1]
+
+
+Diffusion
+----------
+Diffusion means that changing a single character of the input will change many characters of the output. Done well, every part of the input affects every part of the output, making analysis much harder. [2]
+
+[1] http://cryptography.wikia.com/wiki/Confusion_and_diffusion
+
+[2] https://en.wikipedia.org/wiki/Confusion_and_diffusion#Applied_to_encryption
