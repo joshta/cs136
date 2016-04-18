@@ -1,0 +1,48 @@
+Diffie–Hellman key exchange
+---------------------------
+
+2015 Turing Award
+
+Simple story
+
+    Alice puts a secret in a box and locks it with a padlock that she has the only key to open. She then ships the box to Bob.
+
+    Bob receives the box, puts a second padlock that only he has the key to on it, and ships it back to Alice.
+
+    Alice removes her lock and ships the box to Bob a second time.
+
+    Bob removes his lock, opens the box, and has access to the secret that Alice sent him.
+
+Since the box has always had at least one lock on while in transit, Eve never has the opportunity to see what's in side and and steal the secret: In this a cryptographic key that will be used for encrypting the remainder of Alice and Bob's communications.
+
+https://security.stackexchange.com/questions/45963/diffie-hellman-key-exchange-in-plain-english
+
+
+
+Encryption
+----------
+
+RSA - 2002 Turing Award
+
+Finally, Shamir reviewed the current state of cryptography. Despite initial fears among the law enforcement community that encryption would lead to serious impediments for investigations and anti-terrorism work, reports from the Department of Justice show that no federal wiretaps encountered encryption in 2002. In state and local jurisdictions, investigators encountered encryption in 16 wiretaps out of approximately 1,300 cases; however, in none of these cases did encryption interfere with the ability of the investigators to gather the evidence needed for prosecution.
+
+http://www.networkworld.com/article/2332568/security/rsa-founders-give-perspective-on-cryptography.html
+
+
+The FBI Has Successfully Unlocked The iPhone Without Apple's Help
+
+http://www.npr.org/sections/thetwo-way/2016/03/28/472192080/the-fbi-has-successfully-unlocked-the-iphone-without-apples-help
+
+
+Perfect Forward Secrecy
+-----------------------
+
+A public-key system has the property of forward secrecy if it generates one random public key per session to complete a key agreement, without using a deterministic algorithm. This means that the compromise of one message cannot compromise others as well, and there is no one secret value whose acquisition would compromise multiple messages. 
+
+To enable PFS, the client and the server have to be capable of using a cipher suite that utilises the Diffie-Hellman key exchange. Importantly, the key exchange has to be ephemeral. This means that the client and the server will generate a new set of Diffie-Hellman parameters for each session. These parameters can never be re-used and should never be stored, the ephemeral part, and that's what offers the protection going forwards.
+
+https://scotthelme.co.uk/perfect-forward-secrecy/
+
+https://en.wikipedia.org/wiki/Forward_secrecy
+
+
