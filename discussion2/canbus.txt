@@ -1,0 +1,11 @@
+http://surrealparadigm.com/?p=542
+
+The CAN bus port is specific to automobiles, and according to a conversation I had with someone who works directly with Ford Motor Company, it is unfamiliar to most people on most cars.  However, in Tesla’s case they actually use an Ethernet network that is more familiar to people who use computers.  In fact, Tesla uses an internal 100 Mbps, full-duplex Ethernet network with 3 devices on it that use statically defined IP addresses on a 192.168.90.0 subnet…. this may seem like geek speak to most… but trust me, that’s pretty familiar stuff to those of us that are educated in the arena of computer networks.
+
+The most interesting thing to me as a security researcher is under all the pretty graphics of the Tesla itself, it has a customized Ubuntu operating system, something I’ve favored and taught in my classes for years.  This means that modern cars all use an Operating System (OS) and applications just like any other computer we interface with.  It also means that unless the manufacturers keep their OS and applications current in their hardware products (like Tesla, Nest, and others) there will be known vulnerabilities that can be exploited to take control over those systems.  In fact, if there’s one system Offensive Security people know, it’s Ubuntu as it has mainstream offensive testing distributions based on it.
+
+Using an out-dated browser containing a four-year-old Apple Web-Kit that is well documented, having a history of being used to attack other systems.
+
+http://www.instructables.com/id/Exploring-the-Tesla-Model-S-CAN-Bus/
+
+

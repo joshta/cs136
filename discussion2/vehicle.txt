@@ -1,0 +1,25 @@
+http://www.teslarati.com/details-behind-tesla-model-s-hack/
+
+Rogers and Mahaffey had to dismantle the dashboard to gain access to an ethernet port. From there, they were able to connect directly to the CAN bus, the controller area network across which car data is sent and received.
+
+After that, they chained together four separate vulnerabilities, first to gain access to the infotainment systems and then the touchscreen used to control vehicle functions. That let them make the speedometer disappear, alter the suspension, unlock the doors and the trunk, and make the windows go up and down. They were also able to shut down the car’s electric motor below 5 mph.
+
+Above that speed, the dashboard screens would go blank but the car would shift into neutral, giving the driver time to find a safe place to bring the car to a stop. “Ironically, that means it’s the only car that can protect itself against a successful cyber attack,” Rogers noted.
+
+
+
+
+https://www.wired.com/2016/09/tesla-responds-chinese-hack-major-security-upgrade/
+
+Tesla quickly created patches for the browser vulnerability and the Linux kernel flaw.
+
+
+To demonstrate how a Tesla driver could be tricked into visiting a sabotage site, the hackers created their own Wifi hotspot with the name “Tesla Guest,” a common Wifi network name at Tesla dealerships, and enabled access with the commonly shared password for dealership guest networks, which they found on the web. They configured their hotspot so that any Tesla that auto-connects to the network would immediately load their malicious page. 
+
+The Tencent hackers then used another vulnerability in the Tesla’s Linux operating system to gain full privileges on the car’s head unit, the computer in its dashboard. But even then the group couldn’t send commands to critical driving functions like steering and brakes: The Tesla S’ head unit is separated from its CAN bus by a computer Tesla calls a gateway, which only allows certain commands to be sent from the car’s infotainment system to its driving components. To defeat that safeguard, the hackers simply overwrote the gateway’s firmware with their own. Without code signing, nothing prevents that tactic.
+
+
+
+https://www.wired.com/2016/08/hackers-fool-tesla-ss-autopilot-hide-spoof-obstacles/
+
+
