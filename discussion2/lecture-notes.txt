@@ -1,21 +1,3 @@
-Dropping Privileges
--------------------
-
-If your program must run setuid or setgid, make sure to use the privileges properly so that an attacker cannot exploit other possible vulnerabilities in your program and gain these additional privileges. You should perform whatever work requires the additional privileges as early in the program as possible, and you should drop the extra privileges immediately after that work is done. [1]
-
-The master process is run as root, then nginx will setuid()/setgid() to USER/GROUP. [2]
-
-Some daemons need root permissions to start. This happens for example when a daemon wants to bind to a low port (<1024). However running network based daemons with root permissions is considered to be a serious risk. In case of compromise of the process, an attacker has full access to the system. This is why software like nginx starts with a master process and forks non-privileged child processes. These child processes (or workers), run under the context of non-privileged account like www-data. [3]
-
-[1] https://www.safaribooksonline.com/library/view/secure-programming-cookbook/0596003943/ch01s03.html
-
-[2] http://serverfault.com/a/534501
-
-[3] http://linux-audit.com/how-and-why-linux-daemons-drop-privileges/
-
-
-
-
 Authenticated Encryption
 ------------------------
 

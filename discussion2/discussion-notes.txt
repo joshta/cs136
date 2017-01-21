@@ -1,0 +1,48 @@
+Students are very likely to cut off their network connections to their nodes by making firewall mistakes. Then, if they swap out their experiments, they'll lose their work. What they should do instead is use the web interface to reset their nodes; this is a reboot -- not a swapout, and will not destroy their work. The firewall.sh script does not run at boot time, so they will not be locked out once the machines reboot. 
+
+Dropping Privileges
+-------------------
+
+If your program must run setuid or setgid, make sure to use the privileges properly so that an attacker cannot exploit other possible vulnerabilities in your program and gain these additional privileges. You should perform whatever work requires the additional privileges as early in the program as possible, and you should drop the extra privileges immediately after that work is done. [1]
+
+The master process is run as root, then nginx will setuid()/setgid() to USER/GROUP. [2]
+
+Some daemons need root permissions to start. This happens for example when a daemon wants to bind to a low port (<1024). However running network based daemons with root permissions is considered to be a serious risk. In case of compromise of the process, an attacker has full access to the system. This is why software like nginx starts with a master process and forks non-privileged child processes. These child processes (or workers), run under the context of non-privileged account like www-data. [3]
+
+[1] https://www.safaribooksonline.com/library/view/secure-programming-cookbook/0596003943/ch01s03.html
+
+[2] http://serverfault.com/a/534501
+
+[3] http://linux-audit.com/how-and-why-linux-daemons-drop-privileges/
+
+
+Symbolic Links
+--------------
+
+   Symbolic link ownership, permissions, and timestamps
+       The owner and group of an existing symbolic link can be changed using
+       lchown(2).  The only time that the ownership of a symbolic link
+       matters is when the link is being removed or renamed in a directory
+       that has the sticky bit set (see stat(2)).
+
+       On Linux, the permissions of a symbolic link are not used in any
+       operations; the permissions are always 0777 (read, write, and execute
+       for all user categories), and can't be changed.  (Note that there are
+       some "magic" symbolic links in the /proc directory tree—for example,
+       the /proc/[pid]/fd/* files—that have different permissions.)
+
+http://man7.org/linux/man-pages/man7/symlink.7.html
+
+
+However on Mac there exists -h option
+
+     -h      If the file is a symbolic link, change the mode of the link itself rather than the file that
+             the link points to.
+
+
+
+Setuid and Setgid
+-----------------
+
+chmod is used to set these special bits. Thus, the owner of the file may modify these bits.
+
