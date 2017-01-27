@@ -1,0 +1,26 @@
+Overview of system
+https://blog.lookout.com/blog/2015/08/07/hacking-a-tesla/
+
+Tesla Stores OAuth Token in Plaintext
+
+
+But how can the Tesla app be replaced and the token be manipulated? This can be done with a privilege escalation attack similar to rooting apps like Towelroot and Kingroot or malware like Godless and HummingBad. Root permissions can be obtained and the above-mentioned actions can be performed.
+
+The only thing left to do is to trick the Tesla owner into installing this malicious app. Again, there are many ways. One way is through a phishing attack where a free Wi-Fi hotspot is created. Preferably the name of the Wi-Fi network is related to something close by, e.g. the name of a nearby burger restaurant.
+
+When the Tesla owner connects to the Wi-Fi hotspot and visits a web page, he is redirected to a captive portal that displays an advertisement targeting Tesla owners. In this example, an app was advertised that offers the Tesla owner a free meal at the nearby restaurant. When the Tesla owner then clicks on the advertisement, he is redirected to the Google Play store where the malicious app is displayed.
+
+After the Tesla owner has installed and started the malicious app, it will then gain root permissions and replace the Tesla app. When the user starts the app the next time, he will be prompted to provide his username and password. The manipulated Tesla app then sends the username and password to an attacker-controlled server and the attacker is then able to steal the Tesla owner’s car by making a few HTTP requests.
+
+
+According to researchers, it is easy for an attacker to develop a malicious app that contains Android rooting exploits such as Towelroot and Kingroot, which can then be used to escalate the malicious app's privileges, allowing attackers to read OAuth token from the Tesla app.
+
+Stealing this token could enable an attacker to locate the car and open its doors, but could not help the attacker start and drive away with the owner's car.
+
+For this, the malware needs to delete the OAuth token from the owner's phone, which prompts the owner to enter his/her username and password again, allowing the attacker to collect the owner's login credentials.
+
+Researchers say this can be done by modifying the original Tesla app's source code. Since the malware has already rooted the owner's smartphone, it can alter the Tesla app and send a copy of the victim's username and password to the attacker.
+
+https://promon.co/blog/tesla-cars-can-be-stolen-by-hacking-the-app/
+
+https://thehackernews.com/2016/11/hacking-tesla-car.html
