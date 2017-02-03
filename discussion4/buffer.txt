@@ -1,0 +1,21 @@
+Federal Motor Vehicle Safety Standards; V2V Communications
+
+AGENCY: National Highway Traffic Safety Administration (NHTSA), Department of Transportation (DOT)
+
+ACTION: Notice of Proposed Rulemaking (NPRM).
+
+DARPA staff, in discussing V2V cybersecurity issues with DOT researchers, recommended these techniques be included in any V2V requirements going.
+
+In March 2014, researchers from Galois, Inc. issued a white paper with specific recommendations for reducing security risk associated with V2V communications, which they stated would “automatically rule out a whole class of security vulnerabilities” at low cost with known technologies.179 The recommendations were as follows:
+
+ All legal inputs shall be specified precisely using a grammar. Inputs shall only represent data, not computation, and all data types shall be unambiguous (i.e., not machine-dependent). Maximum sizes shall be specified to help reduce denial-of- service and overflow attacks.
+
+ Every input shall be checked to confirm that it conforms to the input specification. Interface messages shall be traceable to mission-critical functionality. Non-required messages should be rejected.
+
+ Parsers and serializers shall be generated, not hand-written, to ensure they do not themselves introduce any security vulnerabilities. Evidence should be provided that
+    parse(serialize(m)) = m, for all messages m, and 
+    parse(i) = REJECT, for all non-valid inputs i.
+
+ Fuzz testing shall be used to demonstrate that implementations are resilient to malicious inputs.
+
+ A standardized crypto solution such as AES-GCM shall be used to ensure confidentiality, integrity, and the impossibility of reply attacks.
