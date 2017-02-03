@@ -1,9 +1,36 @@
-Trump, "Nobody really knows and hacking is very interesting. Once they hack, if you don't catch them in the act, you're not going to catch them."
+Trump
+“Nobody really knows, and hacking is very interesting. Once they hack, if you don't catch them in the act you're not going to catch them,” he said. “They have no idea if it's Russia or China or somebody. It could be somebody sitting in a bed some place.”
+http://www.foxnews.com/politics/2016/12/11/trump-claims-russian-interference-in-2016-race-ridiculous-dems-making-excuses.html
+
+
+    The attacker or attackers registered a deliberately misspelled domain name used for email phishing attacks against DNC employees, connected to an IP address associated with APT 28/Fancy Bear.
+
+    Malware found on the DNC computers was programmed to communicate with an IP address associated with APT 28/Fancy Bear.
+
+    Metadata in a file leaked by “Guccifer 2.0″ shows it was modified by a user called, in cyrillic, “Felix Edmundovich,” a reference to the founder of a Soviet-era secret police force. Another document contained cyrillic metadata indicating it had been edited on a document with Russian language settings.
+
+    Peculiarities in a conversation with “Guccifer 2.0″ that Motherboard published in June suggests he is not Romanian, as he originally claimed.
+
+    The DCLeaks.com domain was registered by a person using the same email service as the person who registered a misspelled domain used to send phishing emails to DNC employees.
+
+    Some of the phishing emails were sent using Yandex, a Moscow-based webmail provider.
+
+    A bit.ly link believed to have been used by APT 28/Fancy Bear in the past was also used against Podesta.
+
+https://theintercept.com/2016/12/14/heres-the-public-evidence-russia-hacked-the-dnc-its-not-enough/
+
+
 
 
 June 15, 2016 UPDATE
 
 CrowdStrike Services Inc., our Incident Response group, was called by the Democratic National Committee (DNC), the formal governing body for the US Democratic Party, to respond to a suspected breach. 
+
+COZY BEAR (also referred to in some industry reports as CozyDuke or APT 29) is the adversary group that last year successfully infiltrated the unclassified networks of the White House, State Department, and US Joint Chiefs of Staff. In addition to the US government, they have targeted organizations across the Defense, Energy, Extractive, Financial, Insurance, Legal, Manufacturing Media, Think Tanks, Pharmaceutical, Research and Technology industries, along with Universities. Victims have also been observed in Western Europe, Brazil, China, Japan, Mexico, New Zealand, South Korea, Turkey and Central Asian countries. COZY BEAR’s preferred intrusion method is a broadly targeted spearphish campaign that typically includes web links to a malicious dropper. Once executed on the machine, the code will deliver one of a number of sophisticated Remote Access Tools (RATs), including AdobeARM, ATI-Agent, and MiniDionis. On many occasions, both the dropper and the payload will contain a range of techniques to ensure the sample is not being analyzed on a virtual machine, using a debugger, or located within a sandbox. They have extensive checks for the various security software that is installed on the system and their specific configurations. When specific versions are discovered that may cause issues for the RAT, it promptly exits. These actions demonstrate a well-resourced adversary with a thorough implant-testing regime that is highly attuned to slight configuration issues that may result in their detection, and which would cause them to deploy a different tool instead. The implants are highly configurable via encrypted configuration files, which allow the adversary to customize various components, including C2 servers, the list of initial tasks to carry out, persistence mechanisms, encryption keys and others. An HTTP protocol with encrypted payload is used for the Command & Control communication.
+
+
+FANCY BEAR (also known as Sofacy or APT 28) is a separate Russian-based threat actor, which has been active since mid 2000s, and has been responsible for targeted intrusion campaigns against the Aerospace, Defense, Energy, Government and Media sectors. Their victims have been identified in the United States, Western Europe, Brazil, Canada, China, Georgia, Iran, Japan, Malaysia and South Korea. Extensive targeting of defense ministries and other military victims has been observed, the profile of which closely mirrors the strategic interests of the Russian government, and may indicate affiliation with Главное Разведывательное Управление (Main Intelligence Department) or GRU, Russia’s premier military intelligence service. This adversary has a wide range of implants at their disposal, which have been developed over the course of many years and include Sofacy, X-Agent, X-Tunnel, WinIDS, Foozer and DownRange droppers, and even malware for Linux, OSX, IOS, Android and Windows Phones. This group is known for its technique of registering domains that closely resemble domains of legitimate organizations they plan to target. Afterwards, they establish phishing sites on these domains that spoof the look and feel of the victim’s web-based email services in order to steal their credentials. FANCY BEAR has also been linked publicly to intrusions into the German Bundestag and France’s TV5 Monde TV station in April 2015.
+
 
 At DNC, COZY BEAR intrusion has been identified going back to summer of 2015, while FANCY BEAR separately breached the network in April 2016.
 
@@ -15,6 +42,3 @@ They also engaged in a number of anti-forensic analysis measures, such as period
 
 https://www.crowdstrike.com/blog/bears-midst-intrusion-democratic-national-committee/
 
-
-
-http://thehill.com/blogs/pundits-blog/technology/309956-how-we-know-russia-not-a-guy-in-jersey-hacked-the-dnc
