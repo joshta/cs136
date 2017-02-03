@@ -1,0 +1,20 @@
+Trump, "Nobody really knows and hacking is very interesting. Once they hack, if you don't catch them in the act, you're not going to catch them."
+
+
+June 15, 2016 UPDATE
+
+CrowdStrike Services Inc., our Incident Response group, was called by the Democratic National Committee (DNC), the formal governing body for the US Democratic Party, to respond to a suspected breach. 
+
+At DNC, COZY BEAR intrusion has been identified going back to summer of 2015, while FANCY BEAR separately breached the network in April 2016.
+
+The COZY BEAR intrusion relied primarily on the SeaDaddy implant developed in Python and compiled with py2exe and another Powershell backdoor with persistence accomplished via Windows Management Instrumentation (WMI) system, which allowed the adversary to launch malicious code automatically after a specified period of system uptime or on a specific schedule.
+
+In addition, FANCY BEAR’s X-Tunnel network tunneling tool, which facilitates connections to NAT-ed environments, was used to also execute remote commands. 
+
+They also engaged in a number of anti-forensic analysis measures, such as periodic event log clearing (via wevtutil cl System and wevtutil cl Security commands) and resetting timestamps of files.
+
+https://www.crowdstrike.com/blog/bears-midst-intrusion-democratic-national-committee/
+
+
+
+http://thehill.com/blogs/pundits-blog/technology/309956-how-we-know-russia-not-a-guy-in-jersey-hacked-the-dnc
