@@ -1,0 +1,42 @@
+The RF signal transmitted from a modern key fob and received by the associated vehicle is only used once. If the vehicle sees the same code again it rejects the command, however there is a loophole in those carefully chosen words. The code must be received by the vehicle’s computer before it can be added to the list of spent codes. [AndrewMohawk] goes through the process of intercepting a code sent from a key fob transmitter and preventing the vehicle from receiving it in a thorough post to his blog. 
+
+https://hackaday.com/tag/replay-attack/
+
+
+Last week, I started keeping my car keys in the freezer, and I may be at the forefront of a new digital safety trend.
+
+And it happened to our Prius, not once, but three times in the last month.
+
+When I told him my story, he knew immediately what had happened. The teenagers, he said, likely got into the car using a relatively simple and inexpensive device called a “power amplifier.”
+
+He explained it like this: In a normal scenario, when you walk up to a car with a keyless entry and try the door handle, the car wirelessly calls out for your key so you don’t have to press any buttons to get inside. If the key calls back, the door unlocks. But the keyless system is capable of searching for a key only within a couple of feet.
+
+Mr. Danev said that when the teenage girl turned on her device, it amplified the distance that the car can search, which then allowed my car to talk to my key, which happened to be sitting about 50 feet away, on the kitchen counter. And just like that, open sesame.
+
+“It’s a bit like a loudspeaker, so when you say hello over it, people who are 100 meters away can hear the word, ‘hello,’ ” Mr. Danev said. “You can buy these devices anywhere for under $100.” He said some of the lower-range devices cost as little as $17 and can be bought online on sites like eBay, Amazon and Craigslist.
+
+https://www.nytimes.com/2015/04/16/style/keeping-your-car-safe-from-electronic-thieves.html?_r=0
+
+https://www.wired.com/2016/03/study-finds-24-car-models-open-unlocking-ignition-hack/
+
+
+We demonstrate relay attacks on Passive Keyless Entry
+and Start (PKES) systems used in modern cars. We build
+two efficient and inexpensive attack realizations, wired and
+wireless physical-layer relays, that allow the attacker to enter
+and start a car by relaying messages between the car
+and the smart key. Our relays are completely independent
+of the modulation, protocol, or presence of strong authentication
+and encryption. We perform an extensive evaluation
+on 10 car models from 8 manufacturers. Our results show
+that relaying the signal in one direction only (from the car
+to the key) is sufficient to perform the attack while the true
+distance between the key and car remains large (tested up
+to 50 meters, non line-of-sight). We also show that, with
+our setup, the smart key can be excited from up to 8 meters.
+This removes the need for the attacker to get close to the
+key in order to establish the relay.
+
+https://eprint.iacr.org/2010/332.pdf
+
+
