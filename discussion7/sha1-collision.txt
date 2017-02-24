@@ -1,0 +1,7 @@
+SHA-1 collision
+---------------
+
+deprecated from TLS certificates
+git still uses
+
+http://shattered.io/

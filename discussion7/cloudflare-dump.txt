@@ -1,0 +1,16 @@
+It turned out that in some unusual circumstances, which I’ll detail below, our edge servers were running past the end of a buffer and returning memory that contained private information such as HTTP cookies, authentication tokens, HTTP POST bodies, and other sensitive data. And some of that data had been cached by search engines.
+
+The bug was serious because the leaked memory could contain private information and because it had been cached by search engines. We have also not discovered any evidence of malicious exploits of the bug or other reports of its existence.
+
+Many of Cloudflare’s services rely on parsing and modifying HTML pages as they pass through our edge servers. For example, we can insert the Google Analytics tag, safely rewrite http:// links to https://, exclude parts of a page from bad bots, obfuscate email addresses, enable AMP, and more by modifying the HTML of a page.
+
+It turned out that the underlying bug that caused the memory leak had been present in our Ragel-based parser for many years but no memory was leaked because of the way the internal NGINX buffers were used. Introducing cf-html subtly changed the buffering which enabled the leakage even though there were no problems in cf-html itself. 
+
+The Ragel code is converted into generated C code which is then compiled. The C code uses, in the classic C manner, pointers to the HTML document being parsed, and Ragel itself gives the user a lot of control of the movement of those pointers. The underlying bug occurs because of a pointer error.
+
+The root cause of the bug was that reaching the end of a buffer was checked using the equality operator and a pointer was able to step past the end of the buffer. This is known as a buffer overrun. Had the check been done using >= instead of == jumping over the buffer end would have been caught. The equality check is generated automatically by Ragel and was not part of the code that we wrote. This indicated that we were not using Ragel correctly.
+
+https://bugs.chromium.org/p/project-zero/issues/detail?id=1139
+
+
+https://blog.cloudflare.com/incident-report-on-memory-leak-caused-by-cloudflare-parser-bug/
