@@ -1,0 +1,43 @@
+Description
+-----------
+CSRF is an attack that tricks the victim into submitting a malicious request. It inherits the identity and privileges of the victim to perform an undesired function on the victim's behalf. For most sites, browser requests automatically include any credentials associated with the site, such as the user's session cookie, IP address, Windows domain credentials, and so forth. Therefore, if the user is currently authenticated to the site, the site will have no way to distinguish between the forged request sent by the victim and a legitimate request sent by the victim. 
+
+Remember that all cookies, even the secret ones, will be submitted with every request. All authentication tokens will be submitted regardless of whether or not the end-user was tricked into submitting the request. 
+
+https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)
+
+Example
+-------
+ Maria first constructs the following exploit URL which will transfer $100,000 from Alice's account to her account. She takes the original command URL and replaces the beneficiary name with herself, raising the transfer amount significantly at the same time: 
+
+http://bank.com/transfer.do?acct=MARIA&amount=100000
+
+
+Then use social engineering attack to load the specially crafted URL which transfer 10k to Maria's account.
+
+The exploit URL can be disguised as an ordinary link, encouraging the victim to click it: 
+
+<a href="http://bank.com/transfer.do?acct=MARIA&amount=100000">View my Pictures!</a>
+
+Or even worse as a 0x0 fake image
+
+<img src="http://bank.com/transfer.do?acct=MARIA&amount=100000" width="0" height="0" border="0">
+
+Famous Attacks
+--------------
+
+ING Direct 2008
+
+We found a vulnerability on ING’s website that allowed additional accounts to be created on behalf of an arbitrary user. We were also able to transfer funds out of users’ bank accounts. We believe this is the first CSRF vulnerability to allow the transfer of funds from a financial institution. 
+
+https://freedom-to-tinker.com/2008/09/29/popular-websites-vulnerable-cross-site-request-forgery-attacks/
+
+Facebook 2009
+
+Nevertheless, that Facebook accounts were compromised in the wild is noteworthy because the attack used a legitimate HTML tag to violate users' privacy.
+
+According to Zilberman's disclosure, the attack simply involved the malicious HTML image tag residing on any site, including any blog or forum that permits the use of image tags even in the comments section.
+
+"The attack elegantly ends with a valid image so the page renders normally, and the attacked user does not notice that anything peculiar has happened," Zilberman said. 
+
+http://www.internetnews.com/security/article.php/3835596/Facebook+Hit+by+CrossSite+Request+Forgery+Attack.htm
